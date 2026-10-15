@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-service
+  namespace: shop
+  labels:
+    app.kubernetes.io/name: cart-service
+    app.kubernetes.io/version: v0.0.1
+    app.kubernetes.io/instance: cart-service
+spec: 
+  replicas: 1
+  selector:
+    matchLabels: 
+        app.kubernetes.io/name: cart-service
+        app.kubernetes.io/instance: cart-service
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: cart-service
+        app.kubernetes.io/version: 28bdd94131c2783275803fc0f20e5d4e99312a11
+        app.kubernetes.io/instance: cart-service
+    spec:
+      volumes:
+        - name: cart-service-config
+          configMap:
+            name: cart-service-config
+      containers:
+       - name: cart-service
+         image: ghcr.io/eternity8c/shop-cart-service:28bdd94131c2783275803fc0f20e5d4e99312a11
+         ports:
+         - containerPort: 8082
+           name: http
+           protocol: TCP
+         volumeMounts:
+          - name: cart-service-config
+            mountPath: /app/configs
+            readOnly: true
+         env:
+          - name: CONFIG_PATH
+            value: ./configs/.env
+         resources:
+          requests:
+            cpu: 50m
+            memory: 64Mi
+          limits:
+            memory: 128Mi
+
