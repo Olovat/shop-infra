@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: shop
   labels:
-  app.kubernetes.io/part-of: shop
+    app.kubernetes.io/part-of: shop
