@@ -4,8 +4,8 @@ metadata:
   name: product-service
   namespace: shop
   labels:
-    app.kubernetes.io/name:  product-svc
-    app.kubernetes.io/instance: product-svc
+    app.kubernetes.io/name:  product-service
+    app.kubernetes.io/instance: product-service
     app.kubernetes.io/component: service
 spec:
   selector:

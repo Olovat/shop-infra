@@ -20,6 +20,12 @@ spec:
         app.kubernetes.io/version: 28bdd94131c2783275803fc0f20e5d4e99312a11
         app.kubernetes.io/instance: api-gateway
     spec:
+      initContainers:
+        - name: wait-upstreams
+          image: busybox:1.36
+          command: ["sh", "-c"]
+          args:
+            - for hp in auth-service:44044 product-service:8081; do h=${hp%:*}; p=${hp#*:}; until nc -z -w 2 "$h" "$p"; do echo "waiting $hp"; sleep 2; done; done
       volumes:
         - name: config-volume
           configMap:

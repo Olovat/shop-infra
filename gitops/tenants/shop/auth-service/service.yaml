@@ -4,8 +4,8 @@ metadata:
   name: auth-service
   namespace: shop
   labels:
-    app.kubernetes.io/name:  auth-svc
-    app.kubernetes.io/instance: auth-svc
+    app.kubernetes.io/name:  auth-service
+    app.kubernetes.io/instance: auth-service
     app.kubernetes.io/component: service
 spec:
   selector:
