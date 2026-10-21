@@ -25,7 +25,7 @@ spec:
         image: busybox:1.36
         command: ["sh", "-c"]
         args:
-          - cat /common/.env /secret/.env > /merged/.env
+          - set -eu; cat /common/.env > /merged/.env; printf "\n" >> /merged/.env; cat /secret/.env >> /merged/.env; test -s /merged/.env'
         volumeMounts:
           - name: common-config
             mountPath: /common

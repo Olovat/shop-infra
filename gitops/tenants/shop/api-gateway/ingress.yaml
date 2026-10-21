@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: demo.tail2f17e5.ts.net
+    - host: shop.tail2f17e5.ts.net
       http:
         paths:
           - path: /

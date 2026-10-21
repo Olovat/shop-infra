@@ -44,4 +44,12 @@ spec:
             memory: 64Mi
           limits:
             memory: 128Mi
-
+            cpu: 100m
+         readinessProbe:
+            httpGet: {path: /metrics, port: http}
+            initialDelaySeconds: 3
+            periodSeconds: 10
+         livenessProbe:
+            httpGet: {path: /metrics, port: http}
+            initialDelaySeconds: 10
+            periodSeconds: 20
