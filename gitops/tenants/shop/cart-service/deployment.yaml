@@ -17,7 +17,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: cart-service
-        app.kubernetes.io/version: 57086d7b56390d203eb1d69eb7b16b2b6499d5a2
+        app.kubernetes.io/version: af9f218848ee8632fa20b46d1bcec83706e22705
         app.kubernetes.io/instance: cart-service
     spec:
       volumes:
@@ -26,7 +26,7 @@ spec:
             name: cart-service-config
       containers:
        - name: cart-service
-         image: ghcr.io/eternity8c/shop-cart-service:57086d7b56390d203eb1d69eb7b16b2b6499d5a2
+         image: ghcr.io/eternity8c/shop-cart-service:af9f218848ee8632fa20b46d1bcec83706e22705
          ports:
          - containerPort: 8082
            name: http

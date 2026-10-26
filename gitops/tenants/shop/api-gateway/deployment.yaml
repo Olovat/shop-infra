@@ -17,7 +17,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: api-gateway
-        app.kubernetes.io/version: 57086d7b56390d203eb1d69eb7b16b2b6499d5a2
+        app.kubernetes.io/version: af9f218848ee8632fa20b46d1bcec83706e22705
         app.kubernetes.io/instance: api-gateway
     spec:
       initContainers:
@@ -32,7 +32,7 @@ spec:
             name: api-gateway-config
       containers:
        - name: api-gateway
-         image: ghcr.io/eternity8c/shop-api-gateway:57086d7b56390d203eb1d69eb7b16b2b6499d5a2
+         image: ghcr.io/eternity8c/shop-api-gateway:af9f218848ee8632fa20b46d1bcec83706e22705
          ports:
          - containerPort: 8080
            name: http

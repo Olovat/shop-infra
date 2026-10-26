@@ -17,7 +17,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: product-service
-        app.kubernetes.io/version: 28bdd94131c2783275803fc0f20e5d4e99312a11
+        app.kubernetes.io/version: af9f218848ee8632fa20b46d1bcec83706e22705
         app.kubernetes.io/instance: product-service
     spec:
       initContainers:
@@ -44,7 +44,7 @@ spec:
         emptyDir: {}
       containers:
        - name: product-service
-         image: ghcr.io/eternity8c/shop-product-service:28bdd94131c2783275803fc0f20e5d4e99312a11
+         image: ghcr.io/eternity8c/shop-product-service:af9f218848ee8632fa20b46d1bcec83706e22705
          ports:
          - containerPort: 8081
            name: http
